@@ -5,8 +5,6 @@ import org.testng.TestNG;
 
 import java.net.URL;
 import java.net.URLDecoder;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 /**

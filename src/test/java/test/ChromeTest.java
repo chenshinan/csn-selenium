@@ -1,10 +1,10 @@
 package test;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -21,14 +21,14 @@ public class ChromeTest {
 
     @Test(description = "test")
     public void test() {
-
-        Logger logger = LoggerFactory.getLogger(ChromeTest.class);
         try {
-            String path = "driver/chromedriver";
-//            String path = this.getClass().getResource("/driver/chromedriver").getPath();
-//            String path = ChromeTest.class.getClassLoader().getResource("driver/chromedriver").getPath();
-            System.out.println("test:" + path);
-            System.setProperty("webdriver.chrome.driver", path);
+//            String path = "driver/chromedriver";
+////            String path = this.getClass().getResource("/driver/chromedriver").getPath();
+////            String path = ChromeTest.class.getClassLoader().getResource("driver/chromedriver").getPath();
+//            System.out.println("test:" + path);
+//            System.setProperty("webdriver.chrome.driver", path);
+//            WebDriverManager.chromedriver().setup();
+            WebDriverManager.chromedriver().setup();
             WebDriver driver = new ChromeDriver();
             driver.get("https://www.baidu.com/");
             driver.findElement(By.cssSelector("input#kw")).sendKeys("java");
